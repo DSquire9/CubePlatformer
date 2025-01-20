@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://h776g4kykxiv"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_b07j2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p50ya"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tket4"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uu1t"]
+albedo_color = Color(0, 1, 0, 1)
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_b07j2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_p50ya")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_tket4")
+surface_material_override/0 = SubResource("StandardMaterial3D_0uu1t")
+
+[node name="CameraOrigin" type="Node3D" parent="."]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraOrigin"]
+spring_length = 2.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraOrigin/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00868082, -0.00747466, 2.00082)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://d7jgs3hxyrxv"]
+
+[ext_resource type="Script" path="res://tutorial_2.gd" id="1_lotda"]
+[ext_resource type="PackedScene" uid="uid://h776g4kykxiv" path="res://player.tscn" id="2_xt8de"]
+[ext_resource type="PackedScene" uid="uid://dx24d6t3l2t66" path="res://death_screen.tscn" id="3_bjuhv"]
+[ext_resource type="PackedScene" uid="uid://ccr53f8sm336" path="res://goal.tscn" id="4_f6qqy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnx08"]
+size = Vector3(50, 2, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4jutp"]
+size = Vector3(50, 2, 50)
+
+[node name="Tutorial2" type="Node"]
+script = ExtResource("1_lotda")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038, -1.5, -0.083)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_lnx08")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_4jutp")
+
+[node name="Player" parent="." instance=ExtResource("2_xt8de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.498303, 0)
+
+[node name="DeathScreen" parent="." instance=ExtResource("3_bjuhv")]
+
+[node name="StaticBody3D" parent="." instance=ExtResource("4_f6qqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919748, -14.7621)
