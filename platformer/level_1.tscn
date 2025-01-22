@@ -28,7 +28,7 @@ mesh = SubResource("BoxMesh_03r50")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.848573, 0.98756, -2.78181)
 
 [node name="Player" parent="." instance=ExtResource("2_7l0c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32682, 0.541965, 8.08809)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.385998, 0.541965, 18.9031)
 
 [node name="DeathScreen" parent="." instance=ExtResource("4_ibjka")]
 
