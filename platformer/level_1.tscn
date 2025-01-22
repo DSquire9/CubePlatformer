@@ -31,3 +31,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.848573, 0.98756, -2.78181)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32682, 0.541965, 8.08809)
 
 [node name="DeathScreen" parent="." instance=ExtResource("4_ibjka")]
+
+[connection signal="clear" from="Player" to="." method="_on_player_clear"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
