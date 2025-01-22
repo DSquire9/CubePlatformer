@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
 signal hit
-
-
+signal clear
 
 @export var speed = 14
 @export var fall_acceleration = 75
@@ -66,7 +65,7 @@ func _physics_process(delta):
 			break
 		
 		if collision.get_collider().is_in_group("Goal"):
-			next_level()
+			clear.emit()
 			break
 
 func die():
@@ -103,6 +102,3 @@ func collides_on_uncrouch() -> bool:
 		return true;
 		
 	return false
-	
-func next_level():
-	get_tree().change_scene_to_file("res://tutorial_2.tscn")

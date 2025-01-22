@@ -1,7 +1,6 @@
 extends Node
 
-@export var next_level = "res://level_1.tscn"
-
+@export var next_level = "res://tutorial_3.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$DeathScreen.hide()
@@ -21,6 +20,6 @@ func _unhandled_input(event):
 
 func _on_player_hit() -> void:
 	$DeathScreen.show()
-
+	
 func _on_player_clear() -> void:
 	get_tree().change_scene_to_file(next_level)

@@ -72,8 +72,18 @@ shape = SubResource("BoxShape3D_x57ne")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_r64iw")
 
+[node name="Ground2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038, 14.5129, -0.083)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2"]
+shape = SubResource("BoxShape3D_x57ne")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground2"]
+mesh = SubResource("BoxMesh_r64iw")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.139173, 0.990268, 0, -0.990268, 0.139173, 0, 53.6415, 0)
+transform = Transform3D(1, 0, 0, 0, 0.139173, 0.990268, 0, -0.990268, 0.139173, 0, 12.7094, -5.37139)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_hcjxr")]
@@ -220,7 +230,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34513, 0)
 mesh = SubResource("BoxMesh_4kfhh")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9921, 0.405863, 13.7972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9921, 0.769906, 13.7972)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36256, 0)
@@ -256,4 +266,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3587, 0.956034, -9.44375)
 [node name="Spike" parent="." instance=ExtResource("5_3a0gl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39326, 0, 6.31894)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4155, 6.14259, -9.47577)
+light_energy = 16.0
+omni_range = 22.523
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1322, 6.14259, -9.47577)
+light_energy = 16.0
+omni_range = 22.523
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.913, 7.09071, 12.0695)
+light_energy = 16.0
+omni_range = 22.523
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72506, 6.14259, 12.0695)
+light_energy = 16.0
+omni_range = 22.523
+
+[connection signal="clear" from="Player" to="." method="_on_player_clear"]
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

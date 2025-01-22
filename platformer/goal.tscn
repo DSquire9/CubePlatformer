@@ -10,7 +10,7 @@ size = Vector3(3, 3, 3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hqutb"]
 size = Vector3(3, 3, 3)
 
-[node name="StaticBody3D" type="StaticBody3D" groups=["Goal"]]
+[node name="Goal" type="StaticBody3D" groups=["Goal"]]
 collision_layer = 16
 collision_mask = 0
 
