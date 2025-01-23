@@ -1,6 +1,6 @@
 extends Node
 
-@export var next_level = "res://level_1.tscn"
+@export var next_level = "res://level_2.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
